@@ -1,0 +1,40 @@
+<!-- Adaugă în contact.html -->
+<section class="contact-form">
+    <div class="container">
+        <h2>Contactează-ne</h2>
+        <form action="php/contact.php" method="POST">
+            <div class="form-group">
+                <label for="name">Nume complet</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="service_type">Serviciu dorit</label>
+                <select id="service_type" name="service_type">
+                    <option value="reparare">Reparare calculator/laptop</option>
+                    <option value="os">Instalare sistem de operare</option>
+                    <option value="programe">Instalare programe</option>
+                    <option value="date">Recuperare date</option>
+                    <option value="other">Alt serviciu</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Mesaj</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Trimite mesaj</button>
+        </form>
+    </div>
+</section>
