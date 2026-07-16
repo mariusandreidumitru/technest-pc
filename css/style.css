@@ -851,10 +851,13 @@ footer ul li a:hover {
 /* ---------- PAGE HERO ---------- */
 .page-hero {
     background: var(--hero-gradient);
-    padding: 180px 0 120px; 
+    padding: 180px 0 140px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
 }
 .page-hero::before {
     content: '';
@@ -881,6 +884,7 @@ footer ul li a:hover {
 .page-hero-content {
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 .page-hero-content .hero-badge {
     display: inline-block;
@@ -900,6 +904,7 @@ footer ul li a:hover {
     font-size: clamp(2.8rem, 6vw, 4.5rem);
     font-weight: 900;
     margin-bottom: 0.5rem;
+    line-height: 1.1;
 }
 .page-hero-content h1 span {
     background: linear-gradient(135deg, var(--secondary-light), var(--accent));
@@ -909,10 +914,12 @@ footer ul li a:hover {
 }
 .page-hero-content h1::after { display: none; }
 .page-hero-content p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
     font-size: 1.2rem;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
+    line-height: 1.6;
+    padding: 0 20px;
 }
 
 /* ---------- SERVICES LIST ---------- */
