@@ -1333,3 +1333,240 @@ footer ul li a:hover {
         font-size: 1.2rem;
     }
 }
+/* ============================================
+   PAGINA SERVICII - STILURI REORGANIZATE
+   ============================================ */
+
+/* ---------- SERVICES LIST ---------- */
+.services-list {
+    padding: 60px 0 80px;
+    background: var(--bg-primary);
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+    align-items: flex-start;
+}
+
+.service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary);
+}
+
+.service-item-icon {
+    font-size: 2.4rem;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.08);
+    border-radius: 12px;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.service-item:hover .service-item-icon {
+    background: rgba(59, 130, 246, 0.15);
+    transform: scale(1.05);
+}
+
+.service-item-content {
+    flex: 1;
+}
+
+.service-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.service-item-header h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    color: var(--text-primary);
+}
+
+.service-item-price {
+    display: inline-block;
+    padding: 4px 16px;
+    background: var(--secondary);
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.service-item-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    max-width: 700px;
+}
+
+.service-item-features {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-bottom: 14px;
+}
+
+.service-item-features li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-item-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: 700;
+}
+
+.service-item-content .btn-sm {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+}
+
+/* ---------- CTA SECTION ---------- */
+.cta-section {
+    padding: 80px 0;
+    background: var(--hero-gradient);
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 0.5rem;
+}
+
+.cta-content h2 span {
+    background: linear-gradient(135deg, var(--secondary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content h2::after {
+    display: none;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta-buttons .btn-outline-light:hover {
+    background: white;
+    color: var(--primary);
+    border-color: white;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .service-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px 20px;
+        text-align: center;
+    }
+
+    .service-item-icon {
+        margin: 0 auto;
+    }
+
+    .service-item-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-item-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-item-features {
+        justify-content: center;
+    }
+
+    .service-item-features li {
+        padding-left: 0;
+    }
+
+    .service-item-features li::before {
+        display: none;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 350px;
+        justify-content: center;
+    }
+
+    .pricing-table thead th,
+    .pricing-table tbody td {
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-item {
+        padding: 20px 16px;
+    }
+
+    .service-item-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-item-price {
+        font-size: 0.75rem;
+        padding: 3px 12px;
+    }
+
+    .service-item-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .service-item-content .btn-sm {
+        width: 100%;
+        justify-content: center;
+    }
+}
