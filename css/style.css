@@ -1083,3 +1083,100 @@ footer .bottom p {
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
+
+/* ============================================
+   EXTRA STYLING - TechNest PC
+   ============================================ */
+
+/* Required field indicator */
+.required {
+    color: var(--danger, #ef4444);
+    font-weight: 700;
+}
+
+.form-note {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* Phone & Email links in contact */
+.phone-link,
+.email-link {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.phone-link:hover,
+.email-link:hover {
+    color: var(--secondary-dark);
+}
+
+.small {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    margin-top: 4px;
+}
+
+/* Footer contact links */
+.footer-phone,
+.footer-email,
+.footer-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* About section button */
+.about .mt-2 {
+    margin-top: 2rem;
+}
+
+/* Info card improvement */
+.info-card .btn-sm {
+    margin-top: 0.5rem;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .hero-stats .stat .number {
+        font-size: 1.6rem;
+    }
+    
+    .contact-info .info-card {
+        padding: 20px;
+    }
+    
+    .info-card .btn-sm {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Loading state for form */
+.contact-form .btn.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.contact-form .btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
