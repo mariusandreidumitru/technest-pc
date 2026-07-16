@@ -7,15 +7,21 @@
     <meta name="description" content="Servicii IT complete: reparare calculatoare, instalare Windows, Office, recuperare date. Prețuri transparente în Călinești, Argeș.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Preconnect pentru resurse externe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 
+    <!-- ===== OVERLAY MOBILE ===== -->
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
+    <!-- ===== HEADER ===== -->
     <header id="header" role="banner">
         <div class="container">
             <a href="index.html" class="logo" aria-label="TechNest PC - Acasă">
-                <img src="images/logo.png" alt="TechNest PC Logo" width="40" height="40">
+                <img src="images/logo.png" alt="TechNest PC Logo" width="40" height="40" loading="lazy">
                 <h1>Tech<span>Nest</span> PC</h1>
             </a>
 
@@ -36,17 +42,19 @@
         </div>
     </header>
 
-    <section class="page-hero">
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero" aria-label="Serviciile noastre">
         <div class="container">
             <div class="page-hero-content">
-                <span class="hero-badge">Servicii Profesionale</span>
+                <span class="hero-badge">🔧 Servicii Profesionale</span>
                 <h1>Serviciile <span>Noastre</span></h1>
                 <p>Soluții complete pentru toate nevoile tale IT, la prețuri corecte și transparente.</p>
             </div>
         </div>
     </section>
 
-    <section class="services-list">
+    <!-- ===== SERVICES LIST ===== -->
+    <section class="services-list" aria-label="Lista serviciilor">
         <div class="container">
 
             <div class="services-list-intro">
@@ -54,9 +62,10 @@
                 <p>Fie că ai nevoie de o reparație rapidă, o instalare de sistem de operare sau recuperare de date, suntem aici să te ajutăm.</p>
             </div>
 
-            <div class="service-item">
+            <!-- Service 1 -->
+            <div class="service-item" id="reparare">
                 <div class="service-item-left">
-                    <div class="service-item-icon">🖥️</div>
+                    <div class="service-item-icon" aria-hidden="true">🖥️</div>
                     <span class="service-item-number">01</span>
                 </div>
                 <div class="service-item-right">
@@ -75,9 +84,10 @@
                 </div>
             </div>
 
-            <div class="service-item">
+            <!-- Service 2 -->
+            <div class="service-item" id="os">
                 <div class="service-item-left">
-                    <div class="service-item-icon">💿</div>
+                    <div class="service-item-icon" aria-hidden="true">💿</div>
                     <span class="service-item-number">02</span>
                 </div>
                 <div class="service-item-right">
@@ -96,9 +106,10 @@
                 </div>
             </div>
 
-            <div class="service-item">
+            <!-- Service 3 -->
+            <div class="service-item" id="programe">
                 <div class="service-item-left">
-                    <div class="service-item-icon">📦</div>
+                    <div class="service-item-icon" aria-hidden="true">📦</div>
                     <span class="service-item-number">03</span>
                 </div>
                 <div class="service-item-right">
@@ -117,9 +128,10 @@
                 </div>
             </div>
 
-            <div class="service-item">
+            <!-- Service 4 -->
+            <div class="service-item" id="recuperare">
                 <div class="service-item-left">
-                    <div class="service-item-icon">💾</div>
+                    <div class="service-item-icon" aria-hidden="true">💾</div>
                     <span class="service-item-number">04</span>
                 </div>
                 <div class="service-item-right">
@@ -138,9 +150,10 @@
                 </div>
             </div>
 
-            <div class="service-item">
+            <!-- Service 5 -->
+            <div class="service-item" id="retelistica">
                 <div class="service-item-left">
-                    <div class="service-item-icon">🌐</div>
+                    <div class="service-item-icon" aria-hidden="true">🌐</div>
                     <span class="service-item-number">05</span>
                 </div>
                 <div class="service-item-right">
@@ -159,9 +172,10 @@
                 </div>
             </div>
 
-            <div class="service-item">
+            <!-- Service 6 -->
+            <div class="service-item" id="optimizare">
                 <div class="service-item-left">
-                    <div class="service-item-icon">⚡</div>
+                    <div class="service-item-icon" aria-hidden="true">⚡</div>
                     <span class="service-item-number">06</span>
                 </div>
                 <div class="service-item-right">
@@ -183,10 +197,11 @@
         </div>
     </section>
 
-    <section class="pricing-section">
+    <!-- ===== PRICING SECTION ===== -->
+    <section class="pricing-section" aria-label="Tabel prețuri">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Tarife</span>
+                <span class="section-tag">💰 Tarife</span>
                 <h2>Prețuri <span>Transparente</span></h2>
                 <p>Toate prețurile includ manopera și garanția serviciilor efectuate.</p>
             </div>
@@ -246,7 +261,8 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section" aria-label="Apel la acțiune">
         <div class="container">
             <div class="cta-content">
                 <h2>Ai nevoie de <span>ajutor</span>?</h2>
@@ -259,6 +275,7 @@
         </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-grid">
@@ -266,10 +283,10 @@
                     <h3>Tech<span>Nest</span> PC</h3>
                     <p>Service IT profesionist în Călinești, Argeș. Reparăm calculatoare, laptopuri și instalăm sisteme de operare.</p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📸</a>
-                        <a href="#" aria-label="WhatsApp">💬</a>
-                        <a href="#" aria-label="YouTube">▶️</a>
+                        <a href="#" aria-label="Facebook" rel="noopener noreferrer">📘</a>
+                        <a href="#" aria-label="Instagram" rel="noopener noreferrer">📸</a>
+                        <a href="#" aria-label="WhatsApp" rel="noopener noreferrer">💬</a>
+                        <a href="#" aria-label="YouTube" rel="noopener noreferrer">▶️</a>
                     </div>
                 </div>
                 <div>
@@ -284,10 +301,10 @@
                 <div>
                     <h4>Servicii</h4>
                     <ul>
-                        <li><a href="services.html">Reparare PC</a></li>
-                        <li><a href="services.html">Instalare OS</a></li>
-                        <li><a href="services.html">Instalare Programe</a></li>
-                        <li><a href="services.html">Recuperare Date</a></li>
+                        <li><a href="services.html#reparare">Reparare PC</a></li>
+                        <li><a href="services.html#os">Instalare OS</a></li>
+                        <li><a href="services.html#programe">Instalare Programe</a></li>
+                        <li><a href="services.html#recuperare">Recuperare Date</a></li>
                     </ul>
                 </div>
                 <div>
@@ -295,16 +312,26 @@
                     <ul>
                         <li><a href="tel:07XXXXXXXX">📞 07XX XXX XXX</a></li>
                         <li><a href="mailto:contact@technestpc.ro">✉️ contact@technestpc.ro</a></li>
-                        <li>📍 Călinești, Argeș</li>
+                        <li><a href="#">📍 Călinești, Argeș</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span class="current-year">2026</span> TechNest PC - Toate drepturile rezervate.</p>
+                <p>&copy; <span id="currentYear">2026</span> TechNest PC - Toate drepturile rezervate.</p>
             </div>
         </div>
     </footer>
 
+    <!-- ===== THEME TOGGLE ===== -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Schimbă tema">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+    </button>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Înapoi sus">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
     <script src="js/main.js"></script>
 </body>
 </html>

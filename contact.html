@@ -7,15 +7,21 @@
     <meta name="description" content="Contactează TechNest PC pentru service IT în Călinești, Argeș. Telefon, email, program și formular de contact.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Preconnect pentru resurse externe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 
+    <!-- ===== OVERLAY MOBILE ===== -->
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
+    <!-- ===== HEADER ===== -->
     <header id="header" role="banner">
         <div class="container">
             <a href="index.html" class="logo" aria-label="TechNest PC - Acasă">
-                <img src="images/logo.png" alt="TechNest PC Logo" width="40" height="40">
+                <img src="images/logo.png" alt="TechNest PC Logo" width="40" height="40" loading="lazy">
                 <h1>Tech<span>Nest</span> PC</h1>
             </a>
 
@@ -36,22 +42,25 @@
         </div>
     </header>
 
-    <section class="page-hero">
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero" aria-label="Pagina de contact">
         <div class="container">
             <div class="page-hero-content">
-                <span class="hero-badge">Contact</span>
+                <span class="hero-badge">📬 Contact</span>
                 <h1>Contactează-<span>ne</span></h1>
                 <p>Suntem aici să te ajutăm. Alege modalitatea preferată de contact.</p>
             </div>
         </div>
     </section>
 
-    <section class="contact-page-section">
+    <!-- ===== CONTACT PAGE ===== -->
+    <section class="contact-page-section" aria-label="Informații de contact">
         <div class="container">
             <div class="contact-page-grid">
+                <!-- Informații contact -->
                 <div class="contact-page-info">
                     <div class="info-item">
-                        <span class="info-icon">📍</span>
+                        <span class="info-icon" aria-hidden="true">📍</span>
                         <div>
                             <h4>Locație</h4>
                             <p>Călinești, Județul Argeș</p>
@@ -59,23 +68,23 @@
                         </div>
                     </div>
                     <div class="info-item">
-                        <span class="info-icon">📞</span>
+                        <span class="info-icon" aria-hidden="true">📞</span>
                         <div>
                             <h4>Telefon</h4>
                             <p><a href="tel:07XXXXXXXX">07XX XXX XXX</a></p>
-                            <p class="small">Luni - Vineri, 09:00 - 18:00</p>
+                            <p style="font-size:0.85rem; color:var(--text-muted);">Luni - Vineri, 09:00 - 18:00</p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <span class="info-icon">✉️</span>
+                        <span class="info-icon" aria-hidden="true">✉️</span>
                         <div>
                             <h4>Email</h4>
                             <p><a href="mailto:contact@technestpc.ro">contact@technestpc.ro</a></p>
-                            <p class="small">Răspundem în maxim 24h</p>
+                            <p style="font-size:0.85rem; color:var(--text-muted);">Răspundem în maxim 24h</p>
                         </div>
                     </div>
                     <div class="info-item">
-                        <span class="info-icon">🕐</span>
+                        <span class="info-icon" aria-hidden="true">🕐</span>
                         <div>
                             <h4>Program de lucru</h4>
                             <p><strong>Luni - Vineri:</strong> 09:00 - 18:00</p>
@@ -83,6 +92,8 @@
                             <p><strong>Duminică:</strong> Închis</p>
                         </div>
                     </div>
+                    
+                    <!-- Social media -->
                     <div class="contact-page-social">
                         <h4>Urmărește-ne</h4>
                         <div class="social-links">
@@ -94,23 +105,34 @@
                     </div>
                 </div>
 
+                <!-- Formular contact -->
                 <div>
-                    <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">Trimite-ne un mesaj</h2>
-                    <p style="margin-bottom:2rem;">Completează formularul și revenim în maxim 24 de ore.</p>
+                    <h2 style="font-size:clamp(1.5rem, 2.5vw, 1.8rem); margin-bottom:0.5rem; color:var(--text-primary);">
+                        Trimite-ne un <span style="color:var(--secondary);">mesaj</span>
+                    </h2>
+                    <p style="margin-bottom:2rem; color:var(--text-muted);">
+                        Completează formularul și revenim în maxim 24 de ore.
+                    </p>
+                    
                     <form class="contact-form" id="contactForm" action="send.php" method="POST" novalidate>
                         <div id="formErrors" style="display:none;"></div>
-                        <div class="form-group">
-                            <label for="nume">Nume complet <span class="required">*</span></label>
-                            <input type="text" id="nume" name="nume" placeholder="Ex: Ion Popescu" required autocomplete="name">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nume">Nume complet <span class="required">*</span></label>
+                                <input type="text" id="nume" name="nume" placeholder="Ex: Ion Popescu" required autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefon">Telefon <span class="required">*</span></label>
+                                <input type="tel" id="telefon" name="telefon" placeholder="Ex: 0722 123 456" required autocomplete="tel">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="telefon">Telefon <span class="required">*</span></label>
-                            <input type="tel" id="telefon" name="telefon" placeholder="Ex: 0722 123 456" required autocomplete="tel">
-                        </div>
+                        
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" placeholder="exemplu@email.ro" autocomplete="email">
                         </div>
+                        
                         <div class="form-group">
                             <label for="serviciu">Serviciu dorit <span class="required">*</span></label>
                             <select id="serviciu" name="serviciu" required>
@@ -124,10 +146,12 @@
                                 <option value="altul">Alt serviciu</option>
                             </select>
                         </div>
+                        
                         <div class="form-group">
                             <label for="mesaj">Descrie problema <span class="required">*</span></label>
                             <textarea id="mesaj" name="mesaj" rows="5" placeholder="Descrie cât mai detaliat problema ta..." required></textarea>
                         </div>
+                        
                         <button type="submit" class="btn btn-primary btn-full">Trimite Mesaj</button>
                         <p class="form-note">* Câmpuri obligatorii</p>
                     </form>
@@ -136,11 +160,13 @@
         </div>
     </section>
 
-    <section class="map-section">
+    <!-- ===== MAP SECTION ===== -->
+    <section class="map-section" aria-label="Locația pe hartă">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Locație</span>
+                <span class="section-tag">📍 Locație</span>
                 <h2>Găsește-ne pe <span>hartă</span></h2>
+                <p>Vino în vizită la sediul nostru din Călinești, Argeș</p>
             </div>
             <div class="map-container">
                 <iframe 
@@ -151,12 +177,13 @@
                     allowfullscreen="" 
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade"
-                    title="Locație TechNest PC">
+                    title="Locație TechNest PC - Călinești, Argeș">
                 </iframe>
             </div>
         </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-grid">
@@ -164,10 +191,10 @@
                     <h3>Tech<span>Nest</span> PC</h3>
                     <p>Service IT profesionist în Călinești, Argeș. Reparăm calculatoare, laptopuri și instalăm sisteme de operare.</p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📸</a>
-                        <a href="#" aria-label="WhatsApp">💬</a>
-                        <a href="#" aria-label="YouTube">▶️</a>
+                        <a href="#" aria-label="Facebook" rel="noopener noreferrer">📘</a>
+                        <a href="#" aria-label="Instagram" rel="noopener noreferrer">📸</a>
+                        <a href="#" aria-label="WhatsApp" rel="noopener noreferrer">💬</a>
+                        <a href="#" aria-label="YouTube" rel="noopener noreferrer">▶️</a>
                     </div>
                 </div>
                 <div>
@@ -182,10 +209,10 @@
                 <div>
                     <h4>Servicii</h4>
                     <ul>
-                        <li><a href="services.html">Reparare PC</a></li>
-                        <li><a href="services.html">Instalare OS</a></li>
-                        <li><a href="services.html">Instalare Programe</a></li>
-                        <li><a href="services.html">Recuperare Date</a></li>
+                        <li><a href="services.html#reparare">Reparare PC</a></li>
+                        <li><a href="services.html#os">Instalare OS</a></li>
+                        <li><a href="services.html#programe">Instalare Programe</a></li>
+                        <li><a href="services.html#recuperare">Recuperare Date</a></li>
                     </ul>
                 </div>
                 <div>
@@ -193,16 +220,26 @@
                     <ul>
                         <li><a href="tel:07XXXXXXXX">📞 07XX XXX XXX</a></li>
                         <li><a href="mailto:contact@technestpc.ro">✉️ contact@technestpc.ro</a></li>
-                        <li>📍 Călinești, Argeș</li>
+                        <li><a href="#">📍 Călinești, Argeș</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span class="current-year">2026</span> TechNest PC - Toate drepturile rezervate.</p>
+                <p>&copy; <span id="currentYear">2026</span> TechNest PC - Toate drepturile rezervate.</p>
             </div>
         </div>
     </footer>
 
+    <!-- ===== THEME TOGGLE ===== -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Schimbă tema">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+    </button>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Înapoi sus">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
     <script src="js/main.js"></script>
 </body>
 </html>
