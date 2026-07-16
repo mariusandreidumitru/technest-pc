@@ -4,205 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNest PC - Service IT Profesional în Argeș</title>
-    <meta name="description" content="Service IT profesionist în Călinești, Argeș. Reparăm calculatoare, laptopuri, instalăm sisteme de operare și programe. Rapid și la prețuri corecte.">
+    <meta name="description" content="Service IT profesionist în Călinești, Argeș. Reparăm calculatoare, laptopuri, instalăm sisteme de operare și programe.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
 
-    <!-- ===== OVERLAY MOBILE ===== -->
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
     <!-- ===== HEADER ===== -->
     <header id="header" role="banner">
         <div class="container">
-            <a href="index.html" class="logo" aria-label="TechNest PC - Acasă">
-                <img src="images/logo.png" alt="TechNest PC Logo" width="40" height="40">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="TechNest PC" width="40" height="40">
                 <h1>Tech<span>Nest</span> PC</h1>
             </a>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Meniu principal" aria-expanded="false">
+            <button class="menu-toggle" id="menuToggle" aria-label="Meniu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav id="mainNav" role="navigation" aria-label="Meniu principal">
+            <nav id="mainNav">
                 <ul>
                     <li><a href="index.html" class="active">Acasă</a></li>
                     <li><a href="services.html">Servicii</a></li>
                     <li><a href="about.html">Despre Noi</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="contact.html" class="btn-nav">Solicită Ofertă</a></li>
-                    <!-- Butonul de toggle se adaugă automat în JS -->
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- ===== HERO ===== -->
-    <section class="hero" aria-label="Prezentare service IT">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Service IT <span>Profesional</span> în Argeș</h2>
-                <p>Reparare calculatoare, laptopuri, instalare sisteme de operare și programe. Rapid, profesionist, la prețuri corecte.</p>
-                <div class="btn-group">
-                    <a href="contact.html" class="btn">Solicită Ofertă</a>
-                    <a href="services.html" class="btn btn-outline">Vezi Servicii</a>
+                <span class="hero-badge">Service IT Profesional</span>
+                <h2>Reparăm <span>calculatoare</span> și <span>laptopuri</span> ca nimeni altul</h2>
+                <p>Diagnosticare gratuită, prețuri transparente și garanție pentru toate serviciile noastre.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Solicită Ofertă</a>
+                    <a href="services.html" class="btn btn-outline-light">Vezi Servicii</a>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat">
-                        <span class="number">500+</span>
-                        <span class="label">Dispozitive reparate</span>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Dispozitive reparate</span>
                     </div>
-                    <div class="stat">
-                        <span class="number">98%</span>
-                        <span class="label">Rata de succes</span>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Rata de succes</span>
                     </div>
-                    <div class="stat">
-                        <span class="number">4.9★</span>
-                        <span class="label">Evaluare clienți</span>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Evaluare clienți</span>
                     </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="images/logo.png" alt="TechNest PC - Service IT Profesional" width="600" height="400" loading="lazy">
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="images/logo.png" alt="TechNest PC Service" loading="lazy">
+                    <div class="floating-card card-1">🖥️ Reparare</div>
+                    <div class="floating-card card-2">💿 Instalare OS</div>
+                    <div class="floating-card card-3">📦 Office</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services" id="servicii" aria-label="Serviciile noastre">
+    <!-- ===== SERVICII ===== -->
+    <section class="services-section">
         <div class="container">
-            <h2 class="text-center">Serviciile Noastre</h2>
-            <p class="subtitle">Oferim soluții complete pentru toate nevoile tale IT</p>
-            <div class="service-grid">
-                <div class="service-card animate delay-1">
-                    <span class="icon" aria-hidden="true">🖥️</span>
-                    <h3>Reparare Calculatoare</h3>
-                    <p>Diagnosticare și reparație hardware/software rapidă</p>
-                    <span class="price-tag">de la 150 RON</span>
+            <div class="section-header">
+                <span class="section-tag">Serviciile Noastre</span>
+                <h2>Ce oferim?</h2>
+                <p>Soluții complete pentru toate nevoile tale IT, într-un singur loc.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">🖥️</div>
+                    <h3>Reparare PC & Laptop</h3>
+                    <p>Diagnosticare și reparație hardware/software rapidă.</p>
+                    <span class="service-price">de la 150 RON</span>
                 </div>
-                <div class="service-card animate delay-2">
-                    <span class="icon" aria-hidden="true">💿</span>
+                <div class="service-item">
+                    <div class="service-icon">💿</div>
                     <h3>Instalare OS</h3>
-                    <p>Windows, Linux, macOS - instalare și configurare completă</p>
-                    <span class="price-tag">de la 100 RON</span>
+                    <p>Windows, Linux, macOS - instalare și configurare.</p>
+                    <span class="service-price">de la 100 RON</span>
                 </div>
-                <div class="service-card animate delay-3">
-                    <span class="icon" aria-hidden="true">📦</span>
+                <div class="service-item">
+                    <div class="service-icon">📦</div>
                     <h3>Instalare Programe</h3>
-                    <p>Suite Office, software profesional, antivirus și securitate</p>
-                    <span class="price-tag">de la 80 RON</span>
+                    <p>Office, Adobe, antivirus și software profesional.</p>
+                    <span class="service-price">de la 80 RON</span>
                 </div>
-                <div class="service-card animate delay-4">
-                    <span class="icon" aria-hidden="true">💾</span>
+                <div class="service-item">
+                    <div class="service-icon">💾</div>
                     <h3>Recuperare Date</h3>
-                    <p>Recuperare date de pe HDD/SSD deteriorate sau formate</p>
-                    <span class="price-tag">de la 200 RON</span>
+                    <p>Recuperare date de pe HDD, SSD, carduri SD.</p>
+                    <span class="service-price">de la 200 RON</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section class="about" id="despre" aria-label="Despre TechNest PC">
+    <!-- ===== DESPRE ===== -->
+    <section class="about-section">
         <div class="container">
-            <div class="about-image">
-                <img src="images/logo.png" alt="TechNest PC - Service IT profesionist" width="600" height="400" loading="lazy">
-            </div>
-            <div class="about-content">
-                <h2>De ce TechNest PC?</h2>
-                <p>Suntem o echipă tânără și pasionată de tehnologie, cu experiență în service IT. Ne dorim să oferim servicii de calitate la prețuri corecte, în județul Argeș.</p>
-                <div class="features">
-                    <div class="feature-item">
-                        <span class="check" aria-hidden="true">✓</span>
-                        <span>Diagnosticare gratuită</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="check" aria-hidden="true">✓</span>
-                        <span>Prețuri transparente</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="check" aria-hidden="true">✓</span>
-                        <span>Garanție servicii</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="check" aria-hidden="true">✓</span>
-                        <span>Suport post-service</span>
-                    </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/logo.png" alt="Despre TechNest PC" loading="lazy">
                 </div>
-                <a href="about.html" class="btn btn-secondary mt-2">Află mai multe</a>
+                <div class="about-content">
+                    <span class="section-tag">Despre Noi</span>
+                    <h2>De ce TechNest PC?</h2>
+                    <p>Suntem o echipă tânără și pasionată de tehnologie, cu experiență în service IT. Ne dorim să oferim servicii de calitate la prețuri corecte.</p>
+                    <ul class="about-features">
+                        <li>✓ Diagnosticare gratuită</li>
+                        <li>✓ Prețuri transparente</li>
+                        <li>✓ Garanție servicii</li>
+                        <li>✓ Suport post-service</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-primary">Află mai multe</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section class="contact" id="contact" aria-label="Contactează-ne">
+    <section class="contact-section">
         <div class="container">
-            <h2 class="text-center">Contactează-ne</h2>
-            <p class="subtitle">Ai o problemă cu device-ul tău? Completează formularul și revenim în 24h</p>
-            <div class="contact-grid">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2>Hai să vorbim!</h2>
+                <p>Ai o problemă? Completează formularul și revenim în 24h.</p>
+            </div>
+            <div class="contact-wrapper">
                 <form class="contact-form" id="contactForm" action="send.php" method="POST" novalidate>
                     <div id="formErrors" style="display:none;"></div>
-                    
-                    <div class="form-group">
-                        <label for="nume">Nume complet <span class="required">*</span></label>
-                        <input type="text" id="nume" name="nume" placeholder="Ex: Ion Popescu" required autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefon">Telefon <span class="required">*</span></label>
-                        <input type="tel" id="telefon" name="telefon" placeholder="Ex: 0722 123 456" required autocomplete="tel">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nume">Nume complet *</label>
+                            <input type="text" id="nume" name="nume" placeholder="Ion Popescu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefon">Telefon *</label>
+                            <input type="tel" id="telefon" name="telefon" placeholder="0722 123 456" required>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="exemplu@email.ro" autocomplete="email">
+                        <input type="email" id="email" name="email" placeholder="exemplu@email.ro">
                     </div>
                     <div class="form-group">
-                        <label for="serviciu">Serviciu dorit <span class="required">*</span></label>
+                        <label for="serviciu">Serviciu dorit *</label>
                         <select id="serviciu" name="serviciu" required>
                             <option value="">Alege un serviciu...</option>
                             <option value="reparare">Reparare Calculator/Laptop</option>
                             <option value="os">Instalare Sistem de Operare</option>
                             <option value="programe">Instalare Programe</option>
                             <option value="recuperare">Recuperare Date</option>
-                            <option value="curatenie">Curățenie internă</option>
                             <option value="altul">Alt serviciu</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="mesaj">Descrie problema <span class="required">*</span></label>
-                        <textarea id="mesaj" name="mesaj" rows="5" placeholder="Descrie cât mai detaliat problema..." required></textarea>
+                        <label for="mesaj">Descrie problema *</label>
+                        <textarea id="mesaj" name="mesaj" rows="4" placeholder="Descrie cât mai detaliat..." required></textarea>
                     </div>
-                    <button type="submit" class="btn">Trimite Mesaj</button>
-                    <p class="form-note">* Câmpuri obligatorii</p>
+                    <button type="submit" class="btn btn-primary btn-full">Trimite Mesaj</button>
                 </form>
-
                 <div class="contact-info">
-                    <div class="info-card">
-                        <div class="icon" aria-hidden="true">📍</div>
-                        <h4>Locație</h4>
-                        <p>Călinești, Județul Argeș</p>
-                        <a href="https://maps.google.com" target="_blank" class="btn btn-sm btn-outline mt-1" rel="noopener noreferrer">Vezi pe hartă</a>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <h4>Locație</h4>
+                            <p>Călinești, Județul Argeș</p>
+                        </div>
                     </div>
-                    <div class="info-card">
-                        <div class="icon" aria-hidden="true">📞</div>
-                        <h4>Telefon</h4>
-                        <p><a href="tel:07XXXXXXXX" class="phone-link">07XX XXX XXX</a></p>
-                        <p class="small">Luni - Vineri, 09:00 - 18:00</p>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p><a href="tel:07XXXXXXXX">07XX XXX XXX</a></p>
+                        </div>
                     </div>
-                    <div class="info-card">
-                        <div class="icon" aria-hidden="true">✉️</div>
-                        <h4>Email</h4>
-                        <p><a href="mailto:contact@technestpc.ro" class="email-link">contact@technestpc.ro</a></p>
-                        <p class="small">Răspundem în maxim 24h</p>
+                    <div class="info-item">
+                        <span class="info-icon">✉️</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:contact@technestpc.ro">contact@technestpc.ro</a></p>
+                        </div>
                     </div>
-                    <div class="info-card">
-                        <div class="icon" aria-hidden="true">🕐</div>
-                        <h4>Program</h4>
-                        <p><strong>Luni - Vineri:</strong> 09:00 - 18:00</p>
-                        <p><strong>Sâmbătă:</strong> 09:00 - 13:00</p>
-                        <p><strong>Duminică:</strong> Închis</p>
+                    <div class="info-item">
+                        <span class="info-icon">🕐</span>
+                        <div>
+                            <h4>Program</h4>
+                            <p>Luni - Vineri: 09:00 - 18:00</p>
+                            <p>Sâmbătă: 09:00 - 13:00</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -210,51 +212,51 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer role="contentinfo">
+    <footer>
         <div class="container">
-            <div class="brand">
-                <h3>Tech<span>Nest</span> PC</h3>
-                <p>Service IT profesionist în Călinești, Argeș. Reparăm calculatoare, laptopuri și instalăm sisteme de operare.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook" rel="noopener noreferrer">📘</a>
-                    <a href="#" aria-label="Instagram" rel="noopener noreferrer">📸</a>
-                    <a href="#" aria-label="WhatsApp" rel="noopener noreferrer">💬</a>
-                    <a href="#" aria-label="YouTube" rel="noopener noreferrer">▶️</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Tech<span>Nest</span> PC</h3>
+                    <p>Service IT profesionist în Călinești, Argeș.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Link-uri</h4>
+                    <ul>
+                        <li><a href="index.html">Acasă</a></li>
+                        <li><a href="services.html">Servicii</a></li>
+                        <li><a href="about.html">Despre Noi</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Servicii</h4>
+                    <ul>
+                        <li><a href="services.html">Reparare PC</a></li>
+                        <li><a href="services.html">Instalare OS</a></li>
+                        <li><a href="services.html">Instalare Programe</a></li>
+                        <li><a href="services.html">Recuperare Date</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:07XXXXXXXX">📞 07XX XXX XXX</a></li>
+                        <li><a href="mailto:contact@technestpc.ro">✉️ contact@technestpc.ro</a></li>
+                        <li>📍 Călinești, Argeș</li>
+                    </ul>
                 </div>
             </div>
-            <div>
-                <h4>Link-uri Rapide</h4>
-                <ul>
-                    <li><a href="index.html">Acasă</a></li>
-                    <li><a href="services.html">Servicii</a></li>
-                    <li><a href="about.html">Despre Noi</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Servicii</h4>
-                <ul>
-                    <li><a href="services.html#reparare">Reparare PC</a></li>
-                    <li><a href="services.html#os">Instalare OS</a></li>
-                    <li><a href="services.html#programe">Instalare Programe</a></li>
-                    <li><a href="services.html#recuperare">Recuperare Date</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="tel:07XXXXXXXX" class="footer-phone">📞 07XX XXX XXX</a></li>
-                    <li><a href="mailto:contact@technestpc.ro" class="footer-email">✉️ contact@technestpc.ro</a></li>
-                    <li><a href="#" class="footer-location">📍 Călinești, Argeș</a></li>
-                </ul>
-            </div>
-            <div class="bottom">
+            <div class="footer-bottom">
                 <p>&copy; <span class="current-year">2026</span> TechNest PC - Toate drepturile rezervate.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
     <script src="js/main.js"></script>
 </body>
 </html>
