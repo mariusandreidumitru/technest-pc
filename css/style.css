@@ -851,7 +851,7 @@ footer ul li a:hover {
 /* ---------- PAGE HERO ---------- */
 .page-hero {
     background: var(--hero-gradient);
-    padding: 180px 0 100px;
+    padding: 180px 0 120px; 
     text-align: center;
     position: relative;
     overflow: hidden;
