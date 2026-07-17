@@ -7,15 +7,16 @@
 
     // ---------- THEME SYSTEM ----------
     // ---------- THEME SYSTEM ----------
+// ---------- THEME SYSTEM ----------
 const themeSystem = {
     toggleBtn: null,
     currentTheme: 'light',
     
     init() {
-        // Caută butonul existent în HTML
+        // Folosește butonul EXISTENT din HTML
         this.toggleBtn = document.getElementById('themeToggle');
         
-        // Dacă nu există buton în HTML, atunci creează unul
+        // DOAR dacă nu există în HTML, atunci creează unul
         if (!this.toggleBtn) {
             this.createToggleButton();
         }
@@ -66,11 +67,10 @@ const themeSystem = {
     
     updateButtons(theme) {
         const isDark = theme === 'dark';
-        // Folosește ID-ul pentru a găsi butonul
-        const btn = document.getElementById('themeToggle');
-        if (btn) {
-            const sun = btn.querySelector('.icon-sun');
-            const moon = btn.querySelector('.icon-moon');
+        // Actualizează doar butonul specific
+        if (this.toggleBtn) {
+            const sun = this.toggleBtn.querySelector('.icon-sun');
+            const moon = this.toggleBtn.querySelector('.icon-moon');
             if (sun && moon) {
                 sun.style.display = isDark ? 'inline' : 'none';
                 moon.style.display = isDark ? 'none' : 'inline';
@@ -81,7 +81,8 @@ const themeSystem = {
     bindEvents() {
         if (this.toggleBtn) {
             // Elimină event listener-ii vechi
-            this.toggleBtn.replaceWith(this.toggleBtn.cloneNode(true));
+            const newBtn = this.toggleBtn.cloneNode(true);
+            this.toggleBtn.parentNode.replaceChild(newBtn, this.toggleBtn);
             this.toggleBtn = document.getElementById('themeToggle');
             
             this.toggleBtn.addEventListener('click', () => this.toggleTheme());
