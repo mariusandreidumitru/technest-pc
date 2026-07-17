@@ -11,17 +11,23 @@
         currentTheme: 'light',
         
         init() {
-            this.createToggleButton();
+            // Folosește butonul existent în loc să creeze unul nou
+            this.toggleBtn = document.getElementById('themeToggle') || document.querySelector('.theme-toggle');
+            
+            // Dacă nu există niciun buton, creează unul
+            if (!this.toggleBtn) {
+                this.createToggleButton();
+            }
+            
             this.loadTheme();
             this.bindEvents();
             this.applyTheme(this.currentTheme);
         },
         
         createToggleButton() {
-            if (document.querySelector('.theme-toggle')) return;
-            
             const btn = document.createElement('button');
             btn.className = 'theme-toggle';
+            btn.id = 'themeToggle';
             btn.setAttribute('aria-label', 'Schimbă tema');
             btn.innerHTML = `
                 <span class="icon-sun">☀️</span>
@@ -64,7 +70,8 @@
         
         updateButtons(theme) {
             const isDark = theme === 'dark';
-            document.querySelectorAll('.theme-toggle').forEach(btn => {
+            // Actualizează toate butoanele de temă (inclusiv cel din HTML)
+            document.querySelectorAll('.theme-toggle, #themeToggle').forEach(btn => {
                 const sun = btn.querySelector('.icon-sun');
                 const moon = btn.querySelector('.icon-moon');
                 if (sun && moon) {
@@ -76,8 +83,14 @@
         
         bindEvents() {
             if (this.toggleBtn) {
+                // Elimină event listener-ii vechi pentru a evita duplicarea
+                const newBtn = this.toggleBtn.cloneNode(true);
+                this.toggleBtn.parentNode.replaceChild(newBtn, this.toggleBtn);
+                this.toggleBtn = newBtn;
+                
                 this.toggleBtn.addEventListener('click', () => this.toggleTheme());
             }
+            
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
                 if (!localStorage.getItem('technest-theme')) {
                     this.applyTheme(e.matches ? 'dark' : 'light');
@@ -86,6 +99,8 @@
         }
     };
 
+    // ... restul codului rămâne neschimbat ...
+    
     // ---------- MOBILE MENU ----------
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
@@ -176,11 +191,15 @@
     }
 
     // ---------- BACK TO TOP ----------
-    const backToTop = document.createElement('button');
-    backToTop.innerHTML = '↑';
-    backToTop.className = 'back-to-top';
-    backToTop.setAttribute('aria-label', 'Înapoi sus');
-    document.body.appendChild(backToTop);
+    // Verifică dacă există deja un buton back-to-top
+    let backToTop = document.querySelector('.back-to-top');
+    if (!backToTop) {
+        backToTop = document.createElement('button');
+        backToTop.innerHTML = '↑';
+        backToTop.className = 'back-to-top';
+        backToTop.setAttribute('aria-label', 'Înapoi sus');
+        document.body.appendChild(backToTop);
+    }
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 400) {
