@@ -1639,3 +1639,86 @@ footer ul li a:hover { color: white; padding-left: 4px; }
 .mt-2 { margin-top: 2rem; }
 .mt-3 { margin-top: 3rem; }
 .small { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Phone Dropdown Menu - CTA Section */
+.phone-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.phone-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 240px;
+    background: var(--bg-color, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+    padding: 8px 0;
+    z-index: 999;
+    animation: slideDown 0.25s ease;
+    overflow: hidden;
+}
+
+.phone-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: var(--text-color, #333);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    border: none;
+    background: transparent;
+}
+
+.phone-menu-item:hover {
+    background: var(--primary-color, #4a6cf7);
+    color: #ffffff;
+}
+
+.phone-menu-item span {
+    font-size: 1.2rem;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Dark mode support */
+[data-theme="dark"] .phone-menu {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+[data-theme="dark"] .phone-menu-item {
+    color: #eee;
+}
+
+[data-theme="dark"] .phone-menu-item:hover {
+    background: #4a6cf7;
+    color: #fff;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .phone-menu {
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 280px;
+    }
+    
+    .phone-menu-item {
+        padding: 14px 20px;
+        font-size: 1.1rem;
+    }
+}
