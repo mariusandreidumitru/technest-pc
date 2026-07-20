@@ -146,7 +146,96 @@
     }
 
     // ==========================================
-    // 7. INITIALIZE EVERYTHING
+    // 7. PHONE DROPDOWN MENU
+    // ==========================================
+    function initPhoneDropdown() {
+        // Funcția toggle trebuie să fie disponibilă global pentru onclick
+        window.togglePhoneMenu = function(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            const menu = document.getElementById('phoneMenu');
+            if (!menu) return;
+            
+            const isVisible = menu.style.display === 'block';
+            
+            // Închide toate meniurile deschise
+            document.querySelectorAll('.phone-menu').forEach(m => {
+                if (m !== menu) {
+                    m.style.display = 'none';
+                }
+            });
+            
+            // Deschide sau închide meniul curent
+            menu.style.display = isVisible ? 'none' : 'block';
+        };
+
+        // Închide meniul la click în altă parte
+        document.addEventListener('click', function(event) {
+            const wrapper = event.target.closest('.phone-dropdown-wrapper');
+            if (!wrapper) {
+                document.querySelectorAll('.phone-menu').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+            }
+        });
+
+        // Închide meniul cu tasta Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.phone-menu').forEach(menu => {
+                    menu.style.display = 'none';
+                });
+            }
+        });
+
+        // Închide meniul la scroll
+        document.addEventListener('scroll', function() {
+            document.querySelectorAll('.phone-menu').forEach(menu => {
+                menu.style.display = 'none';
+            });
+        }, { passive: true });
+
+        // Închide meniul la redimensionare
+        window.addEventListener('resize', function() {
+            document.querySelectorAll('.phone-menu').forEach(menu => {
+                menu.style.display = 'none';
+            });
+        });
+
+        console.log('✅ Phone dropdown initializat');
+    }
+
+    // ==========================================
+    // 8. ANIMATE ON SCROLL
+    // ==========================================
+    function initScrollAnimations() {
+        const animateElements = document.querySelectorAll('.animate');
+        
+        if ('IntersectionObserver' in window && animateElements.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback pentru browsere vechi
+            animateElements.forEach(el => {
+                el.style.opacity = '1';
+            });
+        }
+        console.log('✅ Scroll animations initializat');
+    }
+
+    // ==========================================
+    // 9. INITIALIZE EVERYTHING
     // ==========================================
     function init() {
         console.log('🚀 Initializare TechNest PC...');
@@ -156,6 +245,8 @@
         initHeaderScroll();
         initActiveNav();
         initYear();
+        initPhoneDropdown();
+        initScrollAnimations();
         console.log('%c✅ Toate funcționalitățile sunt active!', 'color: #10b981; font-weight: bold;');
     }
 
@@ -170,102 +261,3 @@
     console.log('%c📍 Călinești, Județul Argeș', 'font-size: 14px; color: #64748b;');
 
 })();
-
-// Toggle phone menu
-function togglePhoneMenu(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    
-    const menu = document.getElementById('phoneMenu');
-    const isVisible = menu.style.display === 'block';
-    
-    // Închide toate meniurile deschise
-    document.querySelectorAll('.phone-menu').forEach(m => {
-        m.style.display = 'none';
-    });
-    
-    // Deschide meniul curent dacă era închis
-    if (!isVisible) {
-        menu.style.display = 'block';
-    }
-}
-
-// Închide meniul la click în altă parte
-document.addEventListener('click', function(event) {
-    const wrapper = event.target.closest('.phone-dropdown-wrapper');
-    if (!wrapper) {
-        document.querySelectorAll('.phone-menu').forEach(menu => {
-            menu.style.display = 'none';
-        });
-    }
-});
-
-// Închide meniul cu tasta Escape
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        document.querySelectorAll('.phone-menu').forEach(menu => {
-            menu.style.display = 'none';
-        });
-    }
-});
-
-// Închide meniul la scroll
-window.addEventListener('scroll', function() {
-    document.querySelectorAll('.phone-menu').forEach(menu => {
-        menu.style.display = 'none';
-    });
-});
-
-// Toggle phone menu
-function togglePhoneMenu(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    
-    const menu = document.getElementById('phoneMenu');
-    if (!menu) return;
-    
-    const isVisible = menu.style.display === 'block';
-    
-    // Închide toate meniurile deschise
-    document.querySelectorAll('.phone-menu').forEach(m => {
-        m.style.display = 'none';
-    });
-    
-    // Deschide meniul curent dacă era închis
-    if (!isVisible) {
-        menu.style.display = 'block';
-    }
-}
-
-// Închide meniul la click în altă parte
-document.addEventListener('click', function(event) {
-    const wrapper = event.target.closest('.phone-dropdown-wrapper');
-    if (!wrapper) {
-        document.querySelectorAll('.phone-menu').forEach(menu => {
-            menu.style.display = 'none';
-        });
-    }
-});
-
-// Închide meniul cu tasta Escape
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        document.querySelectorAll('.phone-menu').forEach(menu => {
-            menu.style.display = 'none';
-        });
-    }
-});
-
-// Închide meniul la scroll
-window.addEventListener('scroll', function() {
-    document.querySelectorAll('.phone-menu').forEach(menu => {
-        menu.style.display = 'none';
-    });
-});
-
-// Închide meniul la redimensionare
-window.addEventListener('resize', function() {
-    document.querySelectorAll('.phone-menu').forEach(menu => {
-        menu.style.display = 'none';
-    });
-});
