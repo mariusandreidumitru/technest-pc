@@ -217,3 +217,19 @@ window.addEventListener('resize', function() {
     console.log('%c📍 Călinești, Județul Argeș', 'font-size: 14px; color: #64748b;');
 
 })();
+
+// Phone Dropdown - cu addEventListener
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneToggle = document.getElementById('phoneToggleBtn');
+    const phoneMenu = document.getElementById('phoneMenu');
+    
+    if (phoneToggle && phoneMenu) {
+        phoneToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isVisible = phoneMenu.style.display === 'block';
+            phoneMenu.style.display = isVisible ? 'none' : 'block';
+        });
+    }
+});
