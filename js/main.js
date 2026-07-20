@@ -215,3 +215,57 @@ window.addEventListener('scroll', function() {
         menu.style.display = 'none';
     });
 });
+
+// Toggle phone menu
+function togglePhoneMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    
+    const menu = document.getElementById('phoneMenu');
+    if (!menu) return;
+    
+    const isVisible = menu.style.display === 'block';
+    
+    // Închide toate meniurile deschise
+    document.querySelectorAll('.phone-menu').forEach(m => {
+        m.style.display = 'none';
+    });
+    
+    // Deschide meniul curent dacă era închis
+    if (!isVisible) {
+        menu.style.display = 'block';
+    }
+}
+
+// Închide meniul la click în altă parte
+document.addEventListener('click', function(event) {
+    const wrapper = event.target.closest('.phone-dropdown-wrapper');
+    if (!wrapper) {
+        document.querySelectorAll('.phone-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+    }
+});
+
+// Închide meniul cu tasta Escape
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        document.querySelectorAll('.phone-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+    }
+});
+
+// Închide meniul la scroll
+window.addEventListener('scroll', function() {
+    document.querySelectorAll('.phone-menu').forEach(menu => {
+        menu.style.display = 'none';
+    });
+});
+
+// Închide meniul la redimensionare
+window.addEventListener('resize', function() {
+    document.querySelectorAll('.phone-menu').forEach(menu => {
+        menu.style.display = 'none';
+    });
+});

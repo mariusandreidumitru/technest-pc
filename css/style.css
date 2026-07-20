@@ -1651,10 +1651,10 @@ footer ul li a:hover { color: white; padding-left: 4px; }
     top: calc(100% + 10px);
     left: 0;
     min-width: 240px;
-    background: var(--bg-color, #ffffff);
+    background: var(--bg-card, #ffffff);
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-color);
     padding: 8px 0;
     z-index: 999;
     animation: slideDown 0.25s ease;
@@ -1666,16 +1666,17 @@ footer ul li a:hover { color: white; padding-left: 4px; }
     align-items: center;
     gap: 12px;
     padding: 12px 20px;
-    color: var(--text-color, #333);
+    color: var(--text-primary, #333);
     text-decoration: none;
     font-size: 1rem;
     transition: all 0.2s ease;
     border: none;
     background: transparent;
+    cursor: pointer;
 }
 
 .phone-menu-item:hover {
-    background: var(--primary-color, #4a6cf7);
+    background: var(--secondary);
     color: #ffffff;
 }
 
@@ -1694,18 +1695,18 @@ footer ul li a:hover { color: white; padding-left: 4px; }
     }
 }
 
-/* Dark mode support */
+/* Dark mode support - deja acoperit de variabile */
 [data-theme="dark"] .phone-menu {
-    background: #2d2d2d;
-    border-color: #444;
+    background: var(--bg-card);
+    border-color: var(--border-color);
 }
 
 [data-theme="dark"] .phone-menu-item {
-    color: #eee;
+    color: var(--text-primary);
 }
 
 [data-theme="dark"] .phone-menu-item:hover {
-    background: #4a6cf7;
+    background: var(--secondary);
     color: #fff;
 }
 
