@@ -2,10 +2,6 @@
    TECHNEST PC - MAIN JAVASCRIPT
    ============================================ */
 
-// ==========================================
-// FUNCȚIA PENTRU TELEFON - DIRECTĂ
-// ==========================================
-
 // Când se încarcă pagina
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ---------- SCHIMBARE TEMĂ ----------
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) {
-        // Încarcă tema salvată
         let savedTheme = localStorage.getItem('technest-theme');
         if (!savedTheme) {
             savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -89,7 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.querySelectorAll('#mainNav a').forEach(function(link) {
             link.addEventListener('click', function() {
-                if (mainNav.classList.contains('open')) toggleMenu();
+                if (mainNav.classList.contains('open')) {
+                    toggleMenu();
+                }
             });
         });
     }
@@ -98,7 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
         window.addEventListener('scroll', function() {
-            backToTop.classList.toggle('visible', window.pageYOffset > 400);
+            if (window.pageYOffset > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
         });
         
         backToTop.addEventListener('click', function() {
@@ -110,7 +111,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', function() {
-            header.classList.toggle('scrolled', window.pageYOffset > 50);
+            if (window.pageYOffset > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     }
     
