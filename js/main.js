@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Alternativ: dacă e ascuns, arată-l; dacă e vizibil, ascunde-l
             if (phoneMenu.style.display === 'block') {
                 phoneMenu.style.display = 'none';
+                phoneBtn.classList.remove('active');
             } else {
                 phoneMenu.style.display = 'block';
+                phoneBtn.classList.add('active');
             }
         });
         
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const wrapper = e.target.closest('.phone-dropdown-wrapper');
             if (!wrapper) {
                 phoneMenu.style.display = 'none';
+                phoneBtn.classList.remove('active');
             }
         });
         
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 phoneMenu.style.display = 'none';
+                phoneBtn.classList.remove('active');
             }
         });
     }
