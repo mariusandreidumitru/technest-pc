@@ -5,12 +5,7 @@
 // ==========================================
 // PHONE DROPDOWN - FUNCȚIE GLOBALĂ
 // ==========================================
-function togglePhoneMenu(event) {
-    if (event) {
-        event.preventDefault();
-        event.stopPropagation();
-    }
-    
+function togglePhoneMenu() {
     const menu = document.getElementById('phoneMenu');
     if (!menu) return;
     
@@ -40,11 +35,21 @@ document.addEventListener('keydown', function(event) {
 });
 
 // ==========================================
-// CELELALTE FUNCȚII
+// TOATE FUNCȚIILE CÂND DOM-UL ESTE GATA
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
     
-    // 1. THEME TOGGLE
+    // 1. PHONE TOGGLE BUTTON
+    const phoneToggleBtn = document.getElementById('phoneToggleBtn');
+    if (phoneToggleBtn) {
+        phoneToggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            togglePhoneMenu();
+        });
+    }
+    
+    // 2. THEME TOGGLE
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) {
         let savedTheme = localStorage.getItem('technest-theme');
@@ -69,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         applyTheme(savedTheme);
     }
     
-    // 2. MOBILE MENU
+    // 3. MOBILE MENU
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
     const navOverlay = document.getElementById('navOverlay');
@@ -94,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 3. BACK TO TOP
+    // 4. BACK TO TOP
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
         window.addEventListener('scroll', function() {
@@ -106,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 4. HEADER SCROLL
+    // 5. HEADER SCROLL
     const header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', function() {
@@ -114,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 5. ACTIVE NAV LINK
+    // 6. ACTIVE NAV LINK
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('#mainNav a:not(.btn-nav)').forEach(function(link) {
         const href = link.getAttribute('href');
@@ -123,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 6. DYNAMIC YEAR
+    // 7. DYNAMIC YEAR
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
