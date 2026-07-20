@@ -198,7 +198,8 @@
 
    
 
- <section class="cta-section" aria-label="Apel la acțiune">
+ <!-- ===== CTA SECTION ===== -->
+<section class="cta-section" aria-label="Apel la acțiune">
     <div class="container">
         <div class="cta-content">
             <h2>Ai nevoie de <span>ajutor</span>?</h2>
@@ -206,10 +207,9 @@
             <div class="cta-buttons">
                 <a href="contact.html" class="btn btn-primary btn-lg">Solicită Ofertă</a>
                 
-                <!-- Dropdown pentru telefon -->
                 <div class="phone-dropdown-wrapper">
-                    <button onclick="togglePhoneMenu(event)" class="btn btn-outline-light btn-lg" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-                        📞 Sună-ne <span style="font-size: 0.7em;">▼</span>
+                    <button onclick="togglePhoneMenu(event)" class="btn btn-outline-light btn-lg" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; min-height: 62px; padding: 18px 44px; font-size: clamp(0.95rem, 1.1vw, 1.05rem);">
+                        📞 Sună-ne <span style="font-size: 0.6em; opacity: 0.7;">▼</span>
                     </button>
                     <div id="phoneMenu" class="phone-menu" style="display: none;">
                         <a href="tel:0763798723" class="phone-menu-item">
