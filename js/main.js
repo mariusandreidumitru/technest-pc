@@ -5,42 +5,42 @@
 // Când se încarcă pagina
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ---------- BUTON TELEFON ----------
     const phoneBtn = document.getElementById('phoneToggleBtn');
-    const phoneMenu = document.getElementById('phoneMenu');
+const phoneMenu = document.getElementById('phoneMenu');
+
+if (phoneBtn && phoneMenu) {
+    // Click pe buton
+    phoneBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Alternativ: dacă e ascuns, arată-l; dacă e vizibil, ascunde-l
+        if (phoneMenu.style.display === 'block') {
+            phoneMenu.style.display = 'none';
+            phoneBtn.classList.remove('active'); // Adaugă asta
+        } else {
+            phoneMenu.style.display = 'block';
+            phoneBtn.classList.add('active'); // Adaugă asta
+        }
+    });
     
-    if (phoneBtn && phoneMenu) {
-        // Click pe buton
-        phoneBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Alternativ: dacă e ascuns, arată-l; dacă e vizibil, ascunde-l
-            if (phoneMenu.style.display === 'block') {
-                phoneMenu.style.display = 'none';
-                phoneBtn.classList.remove('active');
-            } else {
-                phoneMenu.style.display = 'block';
-                phoneBtn.classList.add('active');
-            }
-        });
-        
-        // Click în altă parte - închide meniul
-        document.addEventListener('click', function(e) {
-            const wrapper = e.target.closest('.phone-dropdown-wrapper');
-            if (!wrapper) {
-                phoneMenu.style.display = 'none';
-                phoneBtn.classList.remove('active');
-            }
-        });
-        
-        // Tasta Escape - închide meniul
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                phoneMenu.style.display = 'none';
-                phoneBtn.classList.remove('active');
-            }
-        });
+    // Click în altă parte - închide meniul
+    document.addEventListener('click', function(e) {
+        const wrapper = e.target.closest('.phone-dropdown-wrapper');
+        if (!wrapper) {
+            phoneMenu.style.display = 'none';
+            phoneBtn.classList.remove('active'); // Adaugă asta
+        }
+    });
+    
+    // Tasta Escape - închide meniul
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            phoneMenu.style.display = 'none';
+            phoneBtn.classList.remove('active'); // Adaugă asta
+        }
+    });
+
     }
     
     // ---------- SCHIMBARE TEMĂ ----------
