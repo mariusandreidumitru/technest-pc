@@ -1,3 +1,326 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicii IT Profesionale - TechNest PC</title>
+    <meta name="description" content="Servicii IT complete: reparare calculatoare, instalare Windows, Office, recuperare date. Prețuri transparente în Călinești, Argeș.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    
+    <!-- Preconnect pentru resurse externe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+    <!-- ===== OVERLAY MOBILE ===== -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header" role="banner">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="TechNest PC - Acasă">
+                <img src="images/logo.png" alt="TechNest PC Logo" width="40" height="40" loading="lazy">
+                <h1>Tech<span>Nest</span> PC</h1>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Meniu principal" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="mainNav" role="navigation" aria-label="Meniu principal">
+                <ul>
+                    <li><a href="index.html">Acasă</a></li>
+                    <li><a href="services.html" class="active">Servicii</a></li>
+                    <li><a href="about.html">Despre Noi</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero" aria-label="Serviciile noastre">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="hero-badge">🔧 Servicii Profesionale</span>
+                <h1>Serviciile <span>Noastre</span></h1>
+                <p>Soluții complete pentru toate nevoile tale IT, la prețuri corecte și transparente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES LIST ===== -->
+    <section class="services-list" aria-label="Lista serviciilor">
+        <div class="container">
+
+            <div class="services-list-intro">
+                <h2>Tot ce ai nevoie pentru un device perfect funcțional</h2>
+                <p>Fie că ai nevoie de o reparație rapidă, o instalare de sistem de operare sau recuperare de date, suntem aici să te ajutăm.</p>
+            </div>
+
+            <!-- Service 1 -->
+            <div class="service-item" id="reparare">
+                <div class="service-item-left">
+                    <div class="service-item-icon" aria-hidden="true">🖥️</div>
+                    <span class="service-item-number">01</span>
+                </div>
+                <div class="service-item-right">
+                    <div class="service-item-header">
+                        <h3>Reparare Calculatoare &amp; Laptopuri</h3>
+                        <span class="service-item-price">150 RON+</span>
+                    </div>
+                    <p>Diagnosticare și reparație hardware/software rapidă. Înlocuire componente defecte, curățenie internă și optimizare performanță.</p>
+                    <ul class="service-item-features">
+                        <li>Diagnosticare gratuită</li>
+                        <li>Garanție 3 luni</li>
+                        <li>Curățenie internă</li>
+                        <li>Înlocuire componente</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Solicită Ofertă</a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-item" id="os">
+                <div class="service-item-left">
+                    <div class="service-item-icon" aria-hidden="true">💿</div>
+                    <span class="service-item-number">02</span>
+                </div>
+                <div class="service-item-right">
+                    <div class="service-item-header">
+                        <h3>Instalare Sisteme de Operare</h3>
+                        <span class="service-item-price">80 RON+</span>
+                    </div>
+                    <p>Instalăm și configurăm Windows 10/11, Linux, cu toate driverele și update-urile necesare pentru o funcționare optimă.</p>
+                    <ul class="service-item-features">
+                        <li>Windows 10/11 Pro</li>
+                        <li>Linux Ubuntu / Mint</li>
+                        <li>Drivere + optimizare</li>
+                        <li>Configurare rețea</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Solicită Ofertă</a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-item" id="programe">
+                <div class="service-item-left">
+                    <div class="service-item-icon" aria-hidden="true">📦</div>
+                    <span class="service-item-number">03</span>
+                </div>
+                <div class="service-item-right">
+                    <div class="service-item-header">
+                        <h3>Instalare Programe și Aplicații</h3>
+                        <span class="service-item-price">40 RON+</span>
+                    </div>
+                    <p>Instalăm Microsoft Office, suite Adobe, antivirus și orice programe de care ai nevoie pentru muncă sau divertisment.</p>
+                    <ul class="service-item-features">
+                        <li>Microsoft Office 2021/365</li>
+                        <li>Suite Adobe (Photoshop, Premiere)</li>
+                        <li>Antivirus și securitate</li>
+                        <li>Software contabilitate</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Solicită Ofertă</a>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-item" id="recuperare">
+                <div class="service-item-left">
+                    <div class="service-item-icon" aria-hidden="true">💾</div>
+                    <span class="service-item-number">04</span>
+                </div>
+                <div class="service-item-right">
+                    <div class="service-item-header">
+                        <h3>Recuperare Date</h3>
+                        <span class="service-item-price">100 RON+</span>
+                    </div>
+                    <p>Recuperăm date importante de pe HDD, SSD, carduri SD și unități USB deteriorate sau formate accidental.</p>
+                    <ul class="service-item-features">
+                        <li>Recuperare HDD/SSD</li>
+                        <li>Recuperare partiții pierdute</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Solicită Ofertă</a>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-item" id="retelistica">
+                <div class="service-item-left">
+                    <div class="service-item-icon" aria-hidden="true">🌐</div>
+                    <span class="service-item-number">05</span>
+                </div>
+                <div class="service-item-right">
+                    <div class="service-item-header">
+                        <h3>Configurare Rețele</h3>
+                        <span class="service-item-price">100 RON+</span>
+                    </div>
+                    <p>Configurăm routere, rețele Wi-Fi, imprimante în rețea, NAS și servere pentru acasă sau birou.</p>
+                    <ul class="service-item-features">
+                        <li>Configurare routere</li>
+                        <li>Instalare rețea Wi-Fi</li>
+                        <li>Configurare imprimante</li>
+                        <li>Securizare rețea</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Solicită Ofertă</a>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-item" id="optimizare">
+                <div class="service-item-left">
+                    <div class="service-item-icon" aria-hidden="true">⚡</div>
+                    <span class="service-item-number">06</span>
+                </div>
+                <div class="service-item-right">
+                    <div class="service-item-header">
+                        <h3>Optimizare &amp; Mentenanță</h3>
+                        <span class="service-item-price">120 RON+</span>
+                    </div>
+                    <p>Optimizăm performanța PC-ului, curățăm fișiere inutile și asigurăm o funcționare stabilă și rapidă.</p>
+                    <ul class="service-item-features">
+                        <li>Optimizare sistem</li>
+                        <li>Curățenie digitală</li>
+                        <li>Defragmentare HDD</li>
+                        <li>Update-uri și securitate</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Solicită Ofertă</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== PRICING SECTION ===== -->
+    <section class="pricing-section" aria-label="Tabel prețuri">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">💰 Tarife</span>
+                <h2>Prețuri <span>Transparente</span></h2>
+                <p>Toate prețurile includ manopera și garanția serviciilor efectuate.</p>
+            </div>
+            <div class="pricing-table-wrapper">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Serviciu</th>
+                            <th>Descriere</th>
+                            <th>Preț</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Diagnosticare</strong></td>
+                            <td>Identificare problemă hardware/software</td>
+                            <td class="price-col">Gratuit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reparație Hardware</strong></td>
+                            <td>Înlocuire componente defecte</td>
+                            <td class="price-col">150 RON</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Instalare Windows</strong></td>
+                            <td>Windows 10/11 + drivere + optimizare</td>
+                            <td class="price-col">80 RON</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Instalare Office</strong></td>
+                            <td>Microsoft Office 2021/365</td>
+                            <td class="price-col">50 RON</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Recuperare Date</strong></td>
+                            <td>Recuperare HDD/SSD/card SD</td>
+                            <td class="price-col">100 RON</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Configurare Rețea</strong></td>
+                            <td>Router, Wi-Fi, imprimantă în rețea</td>
+                            <td class="price-col">100 RON</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Curățenie internă</strong></td>
+                            <td>Curățare praf + aplicare pastă termică</td>
+                            <td class="price-col">100 RON</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Optimizare sistem</strong></td>
+                            <td>Optimizare performanță + mentenanță</td>
+                            <td class="price-col">40 RON</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section" aria-label="Apel la acțiune">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ai nevoie de <span>ajutor</span>?</h2>
+                <p>Contactează-ne acum și beneficiezi de o consultație gratuită.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Solicită Ofertă</a>
+                    <a href="tel:0763798273" class="btn btn-outline-light btn-lg">📞 Sună-ne</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Tech<span>Nest</span> PC</h3>
+                    <p>Service IT profesionist în Călinești, Argeș. Reparăm calculatoare, laptopuri și instalăm sisteme de operare.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook" rel="noopener noreferrer">📘</a>
+                        <a href="#" aria-label="Instagram" rel="noopener noreferrer">📸</a>
+                        <a href="#" aria-label="WhatsApp" rel="noopener noreferrer">💬</a>
+                        <a href="#" aria-label="YouTube" rel="noopener noreferrer">▶️</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Link-uri Rapide</h4>
+                    <ul>
+                        <li><a href="index.html">Acasă</a></li>
+                        <li><a href="services.html">Servicii</a></li>
+                        <li><a href="about.html">Despre Noi</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Servicii</h4>
+                    <ul>
+                        <li><a href="services.html#reparare">Reparare PC</a></li>
+                        <li><a href="services.html#os">Instalare OS</a></li>
+                        <li><a href="services.html#programe">Instalare Programe</a></li>
+                        <li><a href="services.html#recuperare">Recuperare Date</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                          <li><a href="tel:0763798723">📞 0763 798 723</a></li>
+                        <li><a href="tel:0745043644">📞 0745 043 644</a></li>
+                        <li><a href="mailto:contact@technestpc.ro">✉️ contact@technestpc.ro</a></li>
+                        <li><a href="#">📍 Călinești, Argeș</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> TechNest PC - Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- ===== THEME TOGGLE ===== -->
     <button class="theme-toggle" id="themeToggle" aria-label="Schimbă tema">
         <span class="icon-sun">☀️</span>
@@ -7,98 +330,7 @@
     <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Înapoi sus">↑</button>
 
-    <!-- ===== JAVASCRIPT DIRECT ===== -->
-    <script>
-    (function() {
-        'use strict';
-        
-        // ========== THEME TOGGLE ==========
-        const btn = document.getElementById('themeToggle');
-        if (btn) {
-            // Încarcă tema
-            let saved = localStorage.getItem('technest-theme');
-            if (!saved) {
-                saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
-            
-            function applyTheme(theme) {
-                if (theme === 'dark') {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
-                }
-                localStorage.setItem('technest-theme', theme);
-            }
-            
-            btn.addEventListener('click', function() {
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                applyTheme(isDark ? 'light' : 'dark');
-            });
-            
-            applyTheme(saved);
-        }
-        
-        // ========== MOBILE MENU ==========
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-        const navOverlay = document.getElementById('navOverlay');
-        
-        if (menuToggle && mainNav && navOverlay) {
-            function toggleMenu() {
-                const isOpen = mainNav.classList.contains('open');
-                menuToggle.classList.toggle('active');
-                mainNav.classList.toggle('open');
-                navOverlay.classList.toggle('active');
-                document.body.style.overflow = isOpen ? '' : 'hidden';
-                menuToggle.setAttribute('aria-expanded', !isOpen);
-            }
-            
-            menuToggle.addEventListener('click', toggleMenu);
-            navOverlay.addEventListener('click', toggleMenu);
-            
-            document.querySelectorAll('#mainNav a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    if (mainNav.classList.contains('open')) toggleMenu();
-                });
-            });
-        }
-        
-        // ========== BACK TO TOP ==========
-        const backToTop = document.getElementById('backToTop');
-        if (backToTop) {
-            window.addEventListener('scroll', function() {
-                backToTop.classList.toggle('visible', window.pageYOffset > 400);
-            });
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-        
-        // ========== HEADER SCROLL ==========
-        const header = document.getElementById('header');
-        if (header) {
-            window.addEventListener('scroll', function() {
-                header.classList.toggle('scrolled', window.pageYOffset > 50);
-            });
-        }
-        
-        // ========== DYNAMIC YEAR ==========
-        const yearSpan = document.getElementById('currentYear');
-        if (yearSpan) {
-            yearSpan.textContent = new Date().getFullYear();
-        }
-        
-        // ========== ACTIVE NAV LINK ==========
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('#mainNav a:not(.btn-nav)').forEach(function(link) {
-            const href = link.getAttribute('href');
-            if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-                link.classList.add('active');
-            }
-        });
-        
-        console.log('✅ TechNest PC - Toate funcționalitățile sunt active!');
-    })();
-    </script>
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="js/main.js"></script>
 </body>
 </html>
