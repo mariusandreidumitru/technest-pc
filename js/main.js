@@ -138,5 +138,5 @@ if (phoneBtn && phoneMenu) {
         yearSpan.textContent = new Date().getFullYear();
     }
     
-    console.log('✅ TechNest PC - Toate funcționalitățile sunt active!');
+   
 });
