@@ -1,7 +1,3 @@
-/* ============================================
-   TECHNEST PC - MAIN JAVASCRIPT
-   ============================================ */
-
 // Când se încarcă pagina
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -10,46 +6,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const phoneMenu = document.getElementById('phoneMenu');
 
     if (phoneBtn && phoneMenu) {
-        // Setare stare inițială
+        // Stare inițială
         phoneMenu.classList.remove('show');
         phoneBtn.setAttribute('aria-expanded', 'false');
 
-        // Click pe buton
         phoneBtn.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
-            // Toggle folosind clase CSS (NU style.display)
-            const isOpen = phoneMenu.classList.contains('show');
+            // Toggle cu clase CSS
+            phoneMenu.classList.toggle('show');
+            this.classList.toggle('active');
             
-            if (isOpen) {
-                phoneMenu.classList.remove('show');
-                phoneBtn.classList.remove('active');
-                phoneBtn.setAttribute('aria-expanded', 'false');
-            } else {
-                phoneMenu.classList.add('show');
-                phoneBtn.classList.add('active');
-                phoneBtn.setAttribute('aria-expanded', 'true');
-            }
+            // Actualizează aria-expanded
+            const isOpen = phoneMenu.classList.contains('show');
+            this.setAttribute('aria-expanded', isOpen);
         });
         
-        // Click în altă parte - închide meniul
+        // Click în exterior
         document.addEventListener('click', function(e) {
-            const wrapper = e.target.closest('.phone-dropdown-wrapper');
-            if (!wrapper && phoneMenu.classList.contains('show')) {
+            if (!e.target.closest('.phone-dropdown-wrapper')) {
                 phoneMenu.classList.remove('show');
                 phoneBtn.classList.remove('active');
                 phoneBtn.setAttribute('aria-expanded', 'false');
             }
         });
         
-        // Tasta Escape - închide meniul
+        // Tasta Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && phoneMenu.classList.contains('show')) {
                 phoneMenu.classList.remove('show');
                 phoneBtn.classList.remove('active');
                 phoneBtn.setAttribute('aria-expanded', 'false');
-                phoneBtn.focus(); // Focus înapoi pe buton
+                phoneBtn.focus();
             }
         });
     }
@@ -162,4 +151,5 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         }
     });
+    
 });
