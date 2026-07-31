@@ -238,35 +238,114 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script src="js/main.js"></script>
+    
+    <!-- ===== MESAJ FORMULAR ===== -->
     <script>
-// Afișează mesajele de succes/eroare din URL
-document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const success = urlParams.get('success');
-    const error = urlParams.get('error');
-    
-    if (success) {
-        const msg = document.createElement('div');
-        msg.className = 'form-success';
-        msg.innerHTML = '✅ Mesajul a fost trimis cu succes! Vom reveni în maxim 24h.';
-        msg.style.cssText = 'color: #155724; padding: 15px; border-radius: 8px; margin: 20px auto; max-width: 600px; background: #d4edda; border: 1px solid #c3e6cb; text-align: center;';
-        document.querySelector('.container').insertBefore(msg, document.querySelector('.container').firstChild);
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get('success');
+        const error = urlParams.get('error');
         
-        // Curăță URL-ul de parametri
-        window.history.replaceState({}, document.title, window.location.pathname);
-    }
-    
-    if (error) {
-        const msg = document.createElement('div');
-        msg.className = 'form-error';
-        msg.innerHTML = '❌ ' + decodeURIComponent(error);
-        msg.style.cssText = 'color: #721c24; padding: 15px; border-radius: 8px; margin: 20px auto; max-width: 600px; background: #f8d7da; border: 1px solid #f5c6cb; text-align: center;';
-        document.querySelector('.container').insertBefore(msg, document.querySelector('.container').firstChild);
+        // Găsește containerul formularului (NU primul .container din pagină)
+        const contactSection = document.querySelector('.contact-page-section .container');
+        if (!contactSection) return;
         
-        // Curăță URL-ul de parametri
-        window.history.replaceState({}, document.title, window.location.pathname);
+        // Elimină mesajele vechi
+        const oldMessages = contactSection.querySelectorAll('.form-message');
+        oldMessages.forEach(msg => msg.remove());
+        
+        if (success === '1') {
+            const msg = document.createElement('div');
+            msg.className = 'form-message form-success';
+            msg.innerHTML = `
+                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
+                    <span style="font-size:2rem;">✅</span>
+                    <div>
+                        <strong style="font-size:1.2rem;">Mesajul a fost trimis cu succes!</strong>
+                        <br>
+                        <span>Vom reveni în maxim 24 de ore.</span>
+                    </div>
+                </div>
+            `;
+            msg.style.cssText = `
+                color: #155724;
+                padding: 20px 25px;
+                border-radius: 12px;
+                margin-bottom: 30px;
+                background: #d4edda;
+                border: 2px solid #28a745;
+                text-align: center;
+                font-size: 1rem;
+                box-shadow: 0 4px 15px rgba(40,167,69,0.25);
+                animation: fadeInDown 0.5s ease;
+            `;
+            
+            // Inserează mesajul înaintea titlului formularului
+            const formTitle = contactSection.querySelector('h2');
+            if (formTitle) {
+                contactSection.insertBefore(msg, formTitle);
+            } else {
+                contactSection.insertBefore(msg, contactSection.firstChild);
+            }
+            
+            // Curăță URL-ul de parametri
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+        
+        if (error) {
+            const msg = document.createElement('div');
+            msg.className = 'form-message form-error';
+            msg.innerHTML = `
+                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
+                    <span style="font-size:2rem;">❌</span>
+                    <div>
+                        <strong style="font-size:1.2rem;">Eroare:</strong>
+                        <br>
+                        <span>${decodeURIComponent(error)}</span>
+                    </div>
+                </div>
+            `;
+            msg.style.cssText = `
+                color: #721c24;
+                padding: 20px 25px;
+                border-radius: 12px;
+                margin-bottom: 30px;
+                background: #f8d7da;
+                border: 2px solid #dc3545;
+                text-align: center;
+                font-size: 1rem;
+                box-shadow: 0 4px 15px rgba(220,53,69,0.25);
+                animation: fadeInDown 0.5s ease;
+            `;
+            
+            const formTitle = contactSection.querySelector('h2');
+            if (formTitle) {
+                contactSection.insertBefore(msg, formTitle);
+            } else {
+                contactSection.insertBefore(msg, contactSection.firstChild);
+            }
+            
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+    });
+    </script>
+    
+    <!-- ===== ANIMAȚIE CSS PENTRU MESAJ ===== -->
+    <style>
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-});
-</script>
+    </style>
 </body>
 </html>

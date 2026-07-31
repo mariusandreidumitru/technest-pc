@@ -88,14 +88,26 @@
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // ========== ACTIVE NAV LINK ==========
+    // ========== ACTIVE NAV LINK (CORECTAT PENTRU URL FĂRĂ .html) ==========
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Elimină extensia .html din numele paginii curente
+    const currentPageName = currentPage.replace(/\.html$/, '');
+    
     document.querySelectorAll('#mainNav a:not(.btn-nav)').forEach(function(link) {
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        let href = link.getAttribute('href');
+        // Elimină extensia .html din href pentru comparație
+        const hrefName = href.replace(/\.html$/, '');
+        
+        // Compară numele paginilor (fără extensie)
+        if (hrefName === currentPageName) {
+            link.classList.add('active');
+        }
+        
+        // Caz special: pagina principală (index)
+        if ((currentPageName === '' || currentPageName === 'index') && hrefName === 'index') {
             link.classList.add('active');
         }
     });
 
-   
 })();
