@@ -1636,3 +1636,91 @@ footer ul li a:hover { color: white; padding-left: 4px; }
 .mt-2 { margin-top: 2rem; }
 .mt-3 { margin-top: 3rem; }
 .small { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ============================================
+   FIX FONT AWESOME - ICONIȚE
+   ============================================ */
+
+/* Font Awesome 6 - Free */
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-brands {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    display: inline-block !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    line-height: 1 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Brand icons (Facebook, Instagram, TikTok) */
+.fab,
+.fa-brands {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+/* Solid icons */
+.fas,
+.fa-solid {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+/* Regular icons */
+.far,
+.fa-regular {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 400 !important;
+}
+
+/* Light icons */
+.fal,
+.fa-light {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 300 !important;
+}
+
+/* Fix pentru toate iconițele din footer și social */
+.footer-social .fab,
+.footer-social .fa-brands,
+.contact-page-social .fab,
+.contact-page-social .fa-brands,
+.social-links .fab,
+.social-links .fa-brands {
+    font-size: 1.2rem !important;
+    color: var(--text-muted) !important;
+    transition: all 0.3s ease !important;
+}
+
+.footer-social .fab:hover,
+.footer-social .fa-brands:hover,
+.contact-page-social .fab:hover,
+.contact-page-social .fa-brands:hover,
+.social-links .fab:hover,
+.social-links .fa-brands:hover {
+    color: var(--secondary) !important;
+    transform: scale(1.1) !important;
+}
+
+/* Fix pentru iconițele din contact */
+.contact-info .fas,
+.contact-info .fa-solid,
+.contact-info .fa-regular,
+footer .fas,
+footer .fa-solid,
+footer .fa-regular {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    display: inline-block !important;
+    font-style: normal !important;
+}
