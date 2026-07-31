@@ -267,5 +267,35 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script src="js/main.js"></script>
+    <script>
+// Afișează mesajele de succes/eroare din URL
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get('success');
+    const error = urlParams.get('error');
+    
+    if (success) {
+        const msg = document.createElement('div');
+        msg.className = 'form-success';
+        msg.innerHTML = '✅ Mesajul a fost trimis cu succes! Vom reveni în maxim 24h.';
+        msg.style.cssText = 'color: #155724; padding: 15px; border-radius: 8px; margin: 20px auto; max-width: 600px; background: #d4edda; border: 1px solid #c3e6cb; text-align: center;';
+        document.querySelector('.container').insertBefore(msg, document.querySelector('.container').firstChild);
+        
+        // Curăță URL-ul de parametri
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+    
+    if (error) {
+        const msg = document.createElement('div');
+        msg.className = 'form-error';
+        msg.innerHTML = '❌ ' + decodeURIComponent(error);
+        msg.style.cssText = 'color: #721c24; padding: 15px; border-radius: 8px; margin: 20px auto; max-width: 600px; background: #f8d7da; border: 1px solid #f5c6cb; text-align: center;';
+        document.querySelector('.container').insertBefore(msg, document.querySelector('.container').firstChild);
+        
+        // Curăță URL-ul de parametri
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+});
+</script>
 </body>
 </html>
