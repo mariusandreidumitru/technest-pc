@@ -5,45 +5,56 @@
 // Când se încarcă pagina
 document.addEventListener('DOMContentLoaded', function() {
     
+    // ===== BUTON TELEFON =====
     const phoneBtn = document.getElementById('phoneToggleBtn');
-const phoneMenu = document.getElementById('phoneMenu');
+    const phoneMenu = document.getElementById('phoneMenu');
 
-if (phoneBtn && phoneMenu) {
-    // Click pe buton
-    phoneBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    if (phoneBtn && phoneMenu) {
+        // Setare stare inițială
+        phoneMenu.classList.remove('show');
+        phoneBtn.setAttribute('aria-expanded', 'false');
+
+        // Click pe buton
+        phoneBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle folosind clase CSS (NU style.display)
+            const isOpen = phoneMenu.classList.contains('show');
+            
+            if (isOpen) {
+                phoneMenu.classList.remove('show');
+                phoneBtn.classList.remove('active');
+                phoneBtn.setAttribute('aria-expanded', 'false');
+            } else {
+                phoneMenu.classList.add('show');
+                phoneBtn.classList.add('active');
+                phoneBtn.setAttribute('aria-expanded', 'true');
+            }
+        });
         
-        // Alternativ: dacă e ascuns, arată-l; dacă e vizibil, ascunde-l
-        if (phoneMenu.style.display === 'block') {
-            phoneMenu.style.display = 'none';
-            phoneBtn.classList.remove('active'); // Adaugă asta
-        } else {
-            phoneMenu.style.display = 'block';
-            phoneBtn.classList.add('active'); // Adaugă asta
-        }
-    });
-    
-    // Click în altă parte - închide meniul
-    document.addEventListener('click', function(e) {
-        const wrapper = e.target.closest('.phone-dropdown-wrapper');
-        if (!wrapper) {
-            phoneMenu.style.display = 'none';
-            phoneBtn.classList.remove('active'); // Adaugă asta
-        }
-    });
-    
-    // Tasta Escape - închide meniul
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            phoneMenu.style.display = 'none';
-            phoneBtn.classList.remove('active'); // Adaugă asta
-        }
-    });
-
+        // Click în altă parte - închide meniul
+        document.addEventListener('click', function(e) {
+            const wrapper = e.target.closest('.phone-dropdown-wrapper');
+            if (!wrapper && phoneMenu.classList.contains('show')) {
+                phoneMenu.classList.remove('show');
+                phoneBtn.classList.remove('active');
+                phoneBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Tasta Escape - închide meniul
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && phoneMenu.classList.contains('show')) {
+                phoneMenu.classList.remove('show');
+                phoneBtn.classList.remove('active');
+                phoneBtn.setAttribute('aria-expanded', 'false');
+                phoneBtn.focus(); // Focus înapoi pe buton
+            }
+        });
     }
     
-    // ---------- SCHIMBARE TEMĂ ----------
+    // ===== SCHIMBARE TEMĂ =====
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) {
         let savedTheme = localStorage.getItem('technest-theme');
@@ -68,7 +79,7 @@ if (phoneBtn && phoneMenu) {
         applyTheme(savedTheme);
     }
     
-    // ---------- MENIU MOBIL ----------
+    // ===== MENIU MOBIL =====
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
     const navOverlay = document.getElementById('navOverlay');
@@ -76,9 +87,11 @@ if (phoneBtn && phoneMenu) {
     if (menuToggle && mainNav && navOverlay) {
         function toggleMenu() {
             const isOpen = mainNav.classList.contains('open');
+            
             menuToggle.classList.toggle('active');
             mainNav.classList.toggle('open');
             navOverlay.classList.toggle('active');
+            
             document.body.style.overflow = isOpen ? '' : 'hidden';
             menuToggle.setAttribute('aria-expanded', !isOpen);
         }
@@ -86,7 +99,8 @@ if (phoneBtn && phoneMenu) {
         menuToggle.addEventListener('click', toggleMenu);
         navOverlay.addEventListener('click', toggleMenu);
         
-        document.querySelectorAll('#mainNav a').forEach(function(link) {
+        // Închide meniul la click pe un link
+        document.querySelectorAll('#mainNav a:not(.btn-nav)').forEach(function(link) {
             link.addEventListener('click', function() {
                 if (mainNav.classList.contains('open')) {
                     toggleMenu();
@@ -95,7 +109,7 @@ if (phoneBtn && phoneMenu) {
         });
     }
     
-    // ---------- BACK TO TOP ----------
+    // ===== BACK TO TOP =====
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
         window.addEventListener('scroll', function() {
@@ -111,7 +125,7 @@ if (phoneBtn && phoneMenu) {
         });
     }
     
-    // ---------- HEADER SCROLL ----------
+    // ===== HEADER SCROLL =====
     const header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', function() {
@@ -123,7 +137,7 @@ if (phoneBtn && phoneMenu) {
         });
     }
     
-    // ---------- LINK ACTIV ----------
+    // ===== LINK ACTIV =====
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('#mainNav a:not(.btn-nav)').forEach(function(link) {
         const href = link.getAttribute('href');
@@ -132,11 +146,20 @@ if (phoneBtn && phoneMenu) {
         }
     });
     
-    // ---------- AN CURENT ----------
+    // ===== AN CURENT =====
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
     
-   
+    // ===== ÎNCHIDERE MENIU LA RESIZE =====
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mainNav && mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            navOverlay.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    });
 });
